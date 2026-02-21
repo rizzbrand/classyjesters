@@ -210,7 +210,7 @@ export default function Home() {
                 ))}
               </ul>
               <Button asChild size="lg" className="bg-[#f97316] hover:bg-[#ea580c] text-white">
-                <Link href="/signup">
+                <Link href="/dashboard/chat">
                   Try Jesters AI <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
