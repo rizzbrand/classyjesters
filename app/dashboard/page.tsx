@@ -54,12 +54,12 @@ export default function DashboardPage() {
                 </div>
               </div>
             </Link>
-            <Link href="/dashboard/tools">
+            <Link href="/dashboard/chat">
               <div className="rounded-xl border border-border bg-background/50 p-4 hover:border-[#f97316]/30 hover:bg-[#f97316]/5 transition-colors">
                 <p className="font-semibold text-purple-500 text-sm">Virtual assistant</p>
                 <div className="mt-2 flex items-center gap-2">
                   <Brain className="h-5 w-5 text-purple-500 flex-shrink-0" />
-                  <p className="text-xs text-muted-foreground">Chat with our AI bot</p>
+                  <p className="text-xs text-muted-foreground">Chat with Jesters AI</p>
                 </div>
               </div>
             </Link>

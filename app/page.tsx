@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, Sparkles, BookOpen, Zap, ChevronRight, Play, User, FileText, Calendar, BarChart3, Brain, GraduationCap, Film, TrendingUp, Wallet, Heart, LayoutDashboard, Settings } from 'lucide-react'
+import { ArrowRight, Sparkles, BookOpen, Zap, ChevronRight, Play, User, FileText, Calendar, BarChart3, Brain, GraduationCap, Film, TrendingUp, Wallet, Heart, LayoutDashboard, Settings, MessageSquare } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 export default function Home() {
@@ -73,7 +73,7 @@ export default function Home() {
                   <span className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-foreground">
                     <Play className="h-3.5 w-3.5 ml-0.5" fill="currentColor" />
                   </span>
-                  Get the app
+                 Get Courses
                 </Link>
               </Button>
             </div>
@@ -175,6 +175,80 @@ export default function Home() {
                 </div>
               )
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Jesters AI Section */}
+      <section id="jesters-ai" className="border-b border-border bg-[#fbfbfd] px-6 py-20 md:px-12 md:py-32">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+            <div className="space-y-6">
+              <div className="flex items-center gap-2">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#f97316] text-white">
+                  <MessageSquare className="h-5 w-5" />
+                </div>
+                <span className="text-sm font-semibold text-[#f97316]">AI Assistant</span>
+              </div>
+              <h2 className="text-3xl font-semibold md:text-4xl tracking-tight">
+                Meet Jesters AI — your creative co-pilot
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Chat with our AI assistant for script ideas, content planning, and creator tips. Get instant, personalized help whenever you need it.
+              </p>
+              <ul className="space-y-3">
+                {[
+                  'Script ideas and brainstorming',
+                  'Content calendar suggestions',
+                  'Creator tips and best practices',
+                  'Prompt optimization help',
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-2 text-muted-foreground">
+                    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#f97316]/10 text-[#f97316] text-xs font-bold">✓</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <Button asChild size="lg" className="bg-[#f97316] hover:bg-[#ea580c] text-white">
+                <Link href="/signup">
+                  Try Jesters AI <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+            {/* Chat preview mockup */}
+            <div className="rounded-2xl border border-border bg-white shadow-xl overflow-hidden">
+              <div className="flex items-center justify-between border-b border-border px-4 py-3 bg-[#fafafa]">
+                <div className="flex items-center gap-2">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#f97316] text-white">
+                    <MessageSquare className="h-4 w-4" />
+                  </div>
+                  <span className="font-semibold text-sm">Jesters AI</span>
+                </div>
+              </div>
+              <div
+                className="p-8 min-h-[280px] flex flex-col items-center justify-center"
+                style={{
+                  background: 'linear-gradient(180deg, rgba(249,115,22,0.04) 0%, rgba(59,130,246,0.02) 50%, rgba(234,179,8,0.02) 100%)',
+                }}
+              >
+                <div
+                  className="w-16 h-16 rounded-full mb-4 opacity-80"
+                  style={{
+                    background: 'radial-gradient(circle at 30% 30%, rgba(251,146,60,0.5), rgba(249,115,22,0.25))',
+                    boxShadow: '0 0 40px rgba(249,115,22,0.2)',
+                  }}
+                />
+                <p className="font-semibold text-lg">Hello Creator!</p>
+                <p className="text-sm text-muted-foreground text-center mt-1 max-w-xs">
+                  Ask me anything about scripts, content, or creator tips.
+                </p>
+              </div>
+              <div className="p-3 border-t border-border bg-[#fafafa]">
+                <div className="flex items-center gap-2 rounded-xl border border-border bg-white px-4 py-2.5">
+                  <span className="text-sm text-muted-foreground">Type a message...</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -374,6 +448,7 @@ export default function Home() {
               <h3 className="font-semibold text-sm text-foreground">Product</h3>
               <ul className="space-y-3 text-sm text-muted-foreground">
                 <li><Link href="#features" className="hover:text-foreground transition-colors">Features</Link></li>
+                <li><Link href="#jesters-ai" className="hover:text-foreground transition-colors">Jesters AI</Link></li>
                 <li><Link href="#tools" className="hover:text-foreground transition-colors">AI Playground</Link></li>
                 <li><Link href="#courses" className="hover:text-foreground transition-colors">Courses</Link></li>
                 <li><Link href="#" className="hover:text-foreground transition-colors">Pricing</Link></li>

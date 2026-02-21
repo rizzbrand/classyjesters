@@ -3,7 +3,7 @@
 import { ReactNode } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Sparkles, LayoutDashboard, BookOpen, Zap, Settings, LogOut, Menu, X } from 'lucide-react'
+import { Sparkles, LayoutDashboard, BookOpen, Zap, Settings, LogOut, Menu, X, MessageSquare } from 'lucide-react'
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 
@@ -13,6 +13,7 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
 
   const navigationItems = [
     { label: 'Dashboard', href: '/dashboard', icon: LayoutDashboard },
+    { label: 'Jesters AI', href: '/dashboard/chat', icon: MessageSquare },
     { label: 'Courses', href: '/dashboard/courses', icon: BookOpen },
     { label: 'AI Playground', href: '/dashboard/tools', icon: Zap },
     { label: 'Settings', href: '/dashboard/settings', icon: Settings },
@@ -84,7 +85,9 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
         <main className="w-full flex-1">
           {/* Top Bar */}
           <header className="hidden md:flex items-center justify-between border-b border-border px-8 py-4">
-            <h1 className="text-2xl font-bold">Dashboard</h1>
+            <h1 className="text-2xl font-bold">
+              {pathname === '/dashboard/chat' ? 'Jesters AI' : pathname.startsWith('/dashboard/courses') ? 'Courses' : pathname.startsWith('/dashboard/tools') ? 'AI Playground' : pathname.startsWith('/dashboard/settings') ? 'Settings' : 'Dashboard'}
+            </h1>
             <div className="flex items-center gap-4">
               <button className="rounded-full bg-secondary p-2 hover:bg-accent/10 transition-colors">
                 <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
